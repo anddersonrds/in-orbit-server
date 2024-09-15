@@ -1,4 +1,4 @@
-name: inorbit-server
+name: inorbit
 
 services:
   pg:
