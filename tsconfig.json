@@ -1,11 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "_version": "16.1.0",
+  "_version": "20.1.0",
 
   "compilerOptions": {
-    "lib": ["es2021"],
+    "lib": ["es2023"],
     "module": "node16",
-    "target": "es2021",
+    "target": "es2022",
 
     "strict": true,
     "esModuleInterop": true,
