@@ -3,11 +3,18 @@ import fastify from 'fastify'
 import { serializerCompiler, validatorCompiler, type ZodTypeProvider } from 'fastify-type-provider-zod'
 
 import { createGoal } from '../functions/create-goal'
+import { getWeekPendingGoals } from '../functions/get-week-pending-goals'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 
 app.setValidatorCompiler(validatorCompiler)
 app.setSerializerCompiler(serializerCompiler)
+
+app.get('/peding-goals', async () => {
+  const { pendingGoals } = await getWeekPendingGoals()
+
+  return { pendingGoals }
+})
 
 app.post(
   '/goals',
